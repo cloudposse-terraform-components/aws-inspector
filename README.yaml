@@ -1,70 +1,34 @@
-name: "template"
-
+name: "aws-inspector"
 # Canonical GitHub repo
-github_repo: "cloudposse-terraform-components/template"
-
+github_repo: "cloudposse-terraform-components/aws-inspector"
 # Short description of this project
-description: |-
-  Description of this component
-
-usage: |-
-  **Stack Level**: Regional or Test47
-
-  Here's an example snippet for how to use this component.
-  
-  ```yaml
-  components:
-    terraform:
-      foo:
-        vars:
-          enabled: true
-  ```
-
+description: "\n\n\n\nThis component is responsible for provisioning an\n[AWS Inspector](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html) by installing the\n[Inspector agent](https://repost.aws/knowledge-center/set-up-amazon-inspector) across all EC2 instances and applying the\nInspector rules.\n\nAWS Inspector is a security assessment service offered by Amazon Web Services (AWS). It helps you analyze and evaluate\nthe security and compliance of your applications and infrastructure deployed on AWS. AWS Inspector automatically\nassesses the resources within your AWS environment, such as Amazon EC2 instances, for potential security vulnerabilities\nand deviations from security best practices.\n\nHere are some key features and functionalities of AWS Inspector:\n\n- **Security Assessments:** AWS Inspector performs security assessments by analyzing the behavior of your resources and\n  identifying potential security vulnerabilities. It examines the network configuration, operating system settings, and\n  installed software to detect common security issues.\n\n- **Vulnerability Detection:** AWS Inspector uses a predefined set of rules to identify common vulnerabilities,\n  misconfigurations, and security exposures. It leverages industry-standard security best practices and continuously\n  updates its knowledge base to stay current with emerging threats.\n\n- **Agent-Based Architecture:** AWS Inspector utilizes an agent-based approach, where you install an Inspector agent on\n  your EC2 instances. The agent collects data about the system and its configuration, securely sends it to AWS\n  Inspector, and allows for more accurate and detailed assessments.\n\n- **Security Findings:** After performing an assessment, AWS Inspector generates detailed findings that highlight\n  security vulnerabilities, including their severity level, impact, and remediation steps. These findings can help you\n  prioritize and address security issues within your AWS environment.\n\n- **Integration with AWS Services:** AWS Inspector seamlessly integrates with other AWS services, such as AWS\n  CloudFormation, AWS Systems Manager, and AWS Security Hub. This allows you to automate security assessments, manage\n  findings, and centralize security information across your AWS infrastructure.\n\n## Usage\n\n**Stack Level**: Regional\n\nHere's an example snippet for how to use this component.\n\n```yaml\ncomponents:\n  terraform:\n    aws-inspector:\n      vars:\n        enabled: true\n        enabled_rules:\n          - cis\n```\n\nThe `aws-inspector` component can be included in your Terraform stack configuration. In the provided example, it is\nenabled with the `enabled` variable set to `true`. The `enabled_rules` variable specifies a list of rules to enable, and\nin this case, it includes the `cis` rule. To simplify rule selection, the short forms of the rules are used for the\n`enabled_rules` key. These short forms automatically retrieve the appropriate ARN for the rule package based on the\nregion being used. You can find a list of available short forms and their corresponding rule packages in the\n[var.enabled_rules](https://github.com/cloudposse/terraform-aws-inspector#input_enabled_rules) input documentation.\n\nFor a comprehensive list of rules and their corresponding ARNs, you can refer to the\n[Amazon Inspector ARNs for rules packages](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_rules-arns.html)\ndocumentation. This resource provides detailed information on various rules that can be used with AWS Inspector and\ntheir unique identifiers (ARNs).\n\nBy customizing the configuration with the appropriate rules, you can tailor the security assessments performed by AWS\nInspector to meet the specific requirements and compliance standards of your applications and infrastructure.\n\n<!-- prettier-ignore-start -->\n\n<!-- prettier-ignore-end -->\n\n## References\n\n- [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/TODO) -\n  Cloud Posse's upstream component\n  "
 include:
   - "docs/terraform.md"
-
 tags:
-  - terraform
-  - terraform-modules
-  - aws
-  - components
-  - terraform-components
-  - root
-  - geodesic
-  - reference-implementation
-  - reference-architecture
-
+  - component/aws-inspector
+  - layer/security-and-compliance
+  - provider/aws
 # Categories of this project
 categories:
-  - terraform-modules/root
-  - terraform-components
-
+  - component/aws-inspector
+  - layer/security-and-compliance
+  - provider/aws
 # License of this project
 license: "APACHE2"
-
 # Badges to display
 badges:
-  - name: "Latest Release"
-    image: "https://img.shields.io/github/release/cloudposse-terraform-components/template.svg?style=for-the-badge"
-    url: "https://github.com/cloudposse-terraform-components/template/releases/latest"
-  - name: "Slack Community"
-    image: "https://slack.cloudposse.com/for-the-badge.svg"
-    url: "https://slack.cloudposse.com"
-
-references:
-  - name: "Cloud Posse Documentation"
-    description: "Complete documentation for the Cloud Posse solution"
-    url: "https://docs.cloudposse.com"
-  - name: "Reference Architectures"
-    description: "Launch effortlessly with our turnkey reference architectures, built either by your team or ours."
-    url: "https://cloudposse.com/"
-
+  - name: Latest Release
+    image: https://img.shields.io/github/release/cloudposse-terraform-components/aws-inspector.svg?style=for-the-badge
+    url: https://github.com/cloudposse-terraform-components/aws-inspector/releases/latest
+  - name: Slack Community
+    image: https://slack.cloudposse.com/for-the-badge.svg
+    url: https://slack.cloudposse.com
 related:
-- name: "Cloud Posse Terraform Modules"
-  description: Our collection of reusable Terraform modules used by our reference architectures.
-  url: "https://docs.cloudposse.com/modules/"
-- name: "Atmos"
-  description: "Atmos is like docker-compose but for your infrastructure"
-  url: "https://atmos.tools"
-
+  - name: "Cloud Posse Terraform Modules"
+    description: Our collection of reusable Terraform modules used by our reference architectures.
+    url: "https://docs.cloudposse.com/modules/"
+  - name: "Atmos"
+    description: "Atmos is like docker-compose but for your infrastructure"
+    url: "https://atmos.tools"
 contributors: [] # If included generates contribs

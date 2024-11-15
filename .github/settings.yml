@@ -2,6 +2,6 @@
 _extends: .github
 repository:
   name: aws-inspector
-  description: '    This component is responsible for provisioning an [AWS Inspector](https://docs'
+  description: This component is responsible for provisioning an AWS Inspector by installing the Inspector agent across all EC2 instances and applying the Inspector rules
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-component

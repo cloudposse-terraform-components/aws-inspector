@@ -21,7 +21,7 @@ resource "aws_ssm_association" "install_agent" {
 
 module "inspector" {
   source  = "cloudposse/inspector/aws"
-  version = "0.2.8"
+  version = "0.4.0"
 
   create_iam_role = true
   enabled_rules   = var.enabled_rules

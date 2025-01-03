@@ -140,6 +140,6 @@ Inspector to meet the specific requirements and compliance standards of your app
 
 - [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/TODO) -
   Cloud Posse's upstream component
-  
+
 
 [<img src="https://cloudposse.com/logo-300x69.svg" height="32" align="right"/>](https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse-terraform-components/aws-inspector&utm_content=)

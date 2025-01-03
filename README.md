@@ -160,7 +160,7 @@ Inspector to meet the specific requirements and compliance standards of your app
 
 - [cloudposse/terraform-aws-components](https://github.com/cloudposse/terraform-aws-components/tree/main/modules/TODO) -
   Cloud Posse's upstream component
-  
+
 
 
 > [!TIP]

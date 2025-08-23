@@ -4,9 +4,9 @@
 <a href="https://cpco.io/homepage"><img src="https://github.com/cloudposse-terraform-components/aws-inspector/blob/main/.github/banner.png?raw=true" alt="Project Banner"/></a><br/>
 
 
-<a href="https://cloudposse.com/support/"><img src="https://img.shields.io/badge/Get_Support-success.svg?style=for-the-badge" alt="Get Support"/></a>
+<p align="right"><a href="https://github.com/cloudposse-terraform-components/aws-inspector/releases/latest"><img src="https://img.shields.io/github/release/cloudposse-terraform-components/aws-inspector.svg?style=for-the-badge" alt="Latest Release"/></a><a href="https://slack.cloudposse.com"><img src="https://slack.cloudposse.com/for-the-badge.svg" alt="Slack Community"/></a><a href="https://cloudposse.com/support/"><img src="https://img.shields.io/badge/Get_Support-success.svg?style=for-the-badge" alt="Get Support"/></a>
 
-
+</p>
 <!-- markdownlint-restore -->
 
 <!--
@@ -30,17 +30,37 @@
 
 -->
 
-This component provisions AWS Inspector by installing the Inspector agent across all EC2 instances and applying Inspector rules.
+This component is responsible for provisioning an
+[AWS Inspector](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html) by installing the
+[Inspector agent](https://repost.aws/knowledge-center/set-up-amazon-inspector) across all EC2 instances and applying the
+Inspector rules.
 
-AWS Inspector is a security assessment service that analyzes and evaluates the security and compliance of applications and infrastructure on AWS. It automatically assesses resources such as Amazon EC2 instances for potential security vulnerabilities and deviations from best practices.
+AWS Inspector is a security assessment service offered by Amazon Web Services (AWS). It helps you analyze and evaluate
+the security and compliance of your applications and infrastructure deployed on AWS. AWS Inspector automatically
+assesses the resources within your AWS environment, such as Amazon EC2 instances, for potential security vulnerabilities
+and deviations from security best practices.
 
-Key features and functionality of AWS Inspector include:
-- Security assessments that analyze resource behavior and identify potential vulnerabilities by examining network configuration, OS settings, and installed software.
-- Vulnerability detection using predefined rules based on industry best practices, with a continuously updated knowledge base.
-- Agent-based architecture: an Inspector agent runs on EC2 instances to collect configuration data and enable accurate, detailed assessments.
-- Security findings that include severity, impact, and remediation steps to help prioritize issues.
-- Integration with other AWS services (e.g., CloudFormation, Systems Manager, Security Hub) to automate assessments, manage findings, and centralize security information.
+Here are some key features and functionalities of AWS Inspector:
 
+- **Security Assessments:** AWS Inspector performs security assessments by analyzing the behavior of your resources and
+  identifying potential security vulnerabilities. It examines the network configuration, operating system settings, and
+  installed software to detect common security issues.
+
+- **Vulnerability Detection:** AWS Inspector uses a predefined set of rules to identify common vulnerabilities,
+  misconfigurations, and security exposures. It leverages industry-standard security best practices and continuously
+  updates its knowledge base to stay current with emerging threats.
+
+- **Agent-Based Architecture:** AWS Inspector utilizes an agent-based approach, where you install an Inspector agent on
+  your EC2 instances. The agent collects data about the system and its configuration, securely sends it to AWS
+  Inspector, and allows for more accurate and detailed assessments.
+
+- **Security Findings:** After performing an assessment, AWS Inspector generates detailed findings that highlight
+  security vulnerabilities, including their severity level, impact, and remediation steps. These findings can help you
+  prioritize and address security issues within your AWS environment.
+
+- **Integration with AWS Services:** AWS Inspector seamlessly integrates with other AWS services, such as AWS
+  CloudFormation, AWS Systems Manager, and AWS Security Hub. This allows you to automate security assessments, manage
+  findings, and centralize security information across your AWS infrastructure.
 
 
 > [!TIP]
@@ -77,7 +97,6 @@ components:
 The `aws-inspector` component can be included in a Terraform stack configuration. In the example, it is enabled with `enabled: true`. The `enabled_rules` variable specifies a list of rules to enable and uses short forms (e.g., `cis`) that automatically resolve to the correct rule package ARN for the target region. See the `var.enabled_rules` input for available short forms.
 
 For a comprehensive list of rules and their corresponding ARNs, refer to the Amazon Inspector ARNs for rules packages documentation. Customize the configuration and enabled rules to tailor security assessments to your requirements and compliance standards.
-
 
 > [!IMPORTANT]
 > In Cloud Posse's examples, we avoid pinning modules to specific versions to prevent discrepancies between the documentation
@@ -157,12 +176,19 @@ For a comprehensive list of rules and their corresponding ARNs, refer to the Ama
 
 
 
+## Related Projects
+
+Check out these related projects.
+
+- [Cloud Posse Terraform Modules](https://docs.cloudposse.com/modules/) - Our collection of reusable Terraform modules used by our reference architectures.
+- [Atmos](https://atmos.tools) - Atmos is like docker-compose but for your infrastructure
 
 
 ## References
 
 For additional context, refer to some of these links.
 
+- [cloudposse-terraform-components](https://github.com/orgs/cloudposse-terraform-components/repositories) - Cloud Posse's upstream component
 - [AWS Inspector](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html) - 
 - [Inspector agent setup](https://repost.aws/knowledge-center/set-up-amazon-inspector) - 
 - [var.enabled_rules input documentation](https://github.com/cloudposse/terraform-aws-inspector#input_enabled_rules) - 
@@ -215,6 +241,12 @@ For additional context, refer to some of these links.
 This project is under active development, and we encourage contributions from our community.
 
 
+
+Many thanks to our outstanding contributors:
+
+<a href="https://github.com/cloudposse-terraform-components/aws-inspector/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=cloudposse-terraform-components/aws-inspector&max=24" />
+</a>
 
 For 🐛 bug reports & feature requests, please use the [issue tracker](https://github.com/cloudposse-terraform-components/aws-inspector/issues).
 
